@@ -1,0 +1,9 @@
+8 tmp.txt
+data.txt
+getfiles.mod
+GetNames.o
+lfc2p1_0s-90i_c272.DAT
+lfc2p1_45s-m45i_c272.DAT
+lfc2p1_90s-0i_c272.DAT
+lfc2p1_m45s-45i_c272.DAT
+tmp.txt

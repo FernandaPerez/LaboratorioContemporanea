@@ -11,7 +11,7 @@
                 open (unit=2, file="data.txt")
 
                 read(2,*) lines
-!               print*, lines
+                print*, lines
 
                 allocate (nombres (1:lines))
 

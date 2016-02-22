@@ -1,0 +1,22 @@
+cd  $1
+
+i=1
+for nombre in *.DAT
+	do
+		echo "$((i++))      $nombre"
+	done
+
+
+
+
+echo "En..."
+pwd
+
+ls  *.DAT > tmp.txt
+
+wc -l tmp.txt > data.txt
+cat tmp.txt >> data.txt
+
+gfortran -c  /home/frey/LaboratorioContemporanea/datos/GetNames.f90
+gfortran /home/frey/LaboratorioContemporanea/datos/practica.f90 GetNames.o -o programa.exe
+
