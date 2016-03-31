@@ -1,5 +1,6 @@
-from numpy import log10, ones_like, asarray, exp, cos
+from numpy import log10, ones_like, asarray, exp, cos, linspace
 from scipy.optimize import curve_fit
+from scipy.interpolate import UnivariateSpline
 import matplotlib.pyplot as plt
 import csv
 
@@ -32,7 +33,7 @@ def gaussian(x, a, b, c):
     return val
     #return a*x+b
 
-def maximos(v):
+def maximos(X, v):
     x_max = []
     y_max = []
     for i in range(len(v)-1):
@@ -42,13 +43,26 @@ def maximos(v):
 
             print(i+1, v[i+1])
     mitad = int(len(y_max)/2)
-    #print(mitad)
+    print(mitad)
 
     y = [max(y_max[:mitad]), max(y_max[mitad:])]
-    x = [x_max[y_max.index(y[0], 1, mitad)],  x_max[y_max.index(y[1], mitad, len(y_max))]]
+    x = [x_max[y_max.index(y[0], 0, mitad)],  x_max[y_max.index(y[1], mitad, len(y_max))]]
 
-    print(x,y)
-    return asarray(x), asarray(y)
+    #print(x,y)
+
+    r = [x[0] - 3, x[0] + 10]
+    s = [x[1] - 10, x[1] + 3]
+
+    X1 = X[r[0]:r[1]]
+    X2 = X[s[0]:s[1]]
+
+    Y1 = v[r[0]:r[1]]
+    Y2 = v[s[0]:s[1]]
+
+    m1 = asarray([X1, Y1])
+    m2 = asarray([X2, Y2])
+
+    return m1, m2
 
 
 
@@ -59,27 +73,22 @@ T_a = absorbance(asarray(alpha))
 T_b = absorbance(asarray(beta))
 L = asarray(lamnda)
 
-x,y = maximos(T_a)
+M1_Int = []
+M2_Int = []
 
-r1 = x[1] - 3
-r2 = x[1] + 3
+for fun in [T_b, T_a]:
+    m1, m2 = maximos(L, fun)
+    spl1 = UnivariateSpline(m1[0], m1[1])
+    spl2 = UnivariateSpline(m2[0], m2[1])
 
-XL = L[r1:r2]
-YT = T_a[r1:r2]
-
-mean = sum(YT)/len(YT)
-sigma = sum((YT - mean)**2)/len(YT)
-
-p = [1., mean, sigma]
-
-coef, matriz = curve_fit(gaussian, XL, YT, p0 = p)
-print(coef)
-
-print(mean,sigma)
+    M1_Int.append(spl1)
+    M2_Int.append(spl2)
 
 
 plt.figure(1)
 plt.plot(L, T_a, '.', color="deeppink")
+plt.plot(L, M1_Int[0](L))
+
 #plt.plot(L, gaussian(L, coef[0], coef[1], coef[2]))
 plt.xlim(380,710)
 plt.xlabel(r"$ \lambda  (nm)$")
@@ -93,4 +102,4 @@ plt.xlim(380,710)
 plt.xlabel(r"$ \lambda  (nm)$")
 plt.ylabel(r"Absorbancia")
 plt.title(r"Espectro de Absorción para la $\beta$ - clorofila")
-#plt.show()
+plt.show()
