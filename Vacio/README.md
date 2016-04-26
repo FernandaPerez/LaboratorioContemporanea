@@ -7,7 +7,7 @@
  ```
 - Macro `fit.C`: fitea la curva de presión característica de un sistema de vacío para obtener el valor de la velocidad efecticva de bombeo. Es necesario tener la paquetería de análisis CERN-ROOT.
 ```
-$ sudo apt-get root
+$ sudo apt-get install root
 $ root -l fit.C
 ```
 
