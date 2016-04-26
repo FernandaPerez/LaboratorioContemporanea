@@ -50,8 +50,8 @@ def maximos(X, v):
 
     #print(x,y)
 
-    r = [x[0] - 3, x[0] + 10]
-    s = [x[1] - 10, x[1] + 3]
+    r = [x[0] - 4, x[0] + 4]
+    s = [x[1] - 3, x[1] + 2]
 
     X1 = X[r[0]:r[1]]
     X2 = X[s[0]:s[1]]
@@ -73,33 +73,56 @@ T_a = absorbance(asarray(alpha))
 T_b = absorbance(asarray(beta))
 L = asarray(lamnda)
 
-M1_Int = []
-M2_Int = []
+m1a, m2a = maximos(L, T_a)
 
-for fun in [T_b, T_a]:
-    m1, m2 = maximos(L, fun)
-    spl1 = UnivariateSpline(m1[0], m1[1])
-    spl2 = UnivariateSpline(m2[0], m2[1])
+spl1 = UnivariateSpline(m1a[0], m1a[1])
+spl2 = UnivariateSpline(m2a[0], m2a[1])
+xint1 = linspace(m1a[0][0], m1a[0][-1], 1000)
+wint1 = linspace(m2a[0][0], m2a[0][-1], 1000)
 
-    M1_Int.append(spl1)
-    M2_Int.append(spl2)
+aa1= spl1(xint1).argmax()
+aa2 = spl2(wint1).argmax()
+
+la1 = xint1[aa1]
+la2 = wint1[aa2]
+
+n1a, n2a = maximos(L, T_b)
+
+rpl1 = UnivariateSpline(n1a[0], n1a[1])
+rpl2 = UnivariateSpline(n2a[0], n2a[1])
+xint2 = linspace(n1a[0][0], n1a[0][-1], 1000)
+wint2 = linspace(n2a[0][0], n2a[0][-1], 1000)
+
+ab1= rpl1(xint2).argmax()
+ab2 = rpl2(wint2).argmax()
+
+lb1 = xint1[ab1]
+lb2 = wint1[ab2]
+print(ab1, ab2)
 
 
-plt.figure(1)
-plt.plot(L, T_a, '.', color="deeppink")
-plt.plot(L, M1_Int[0](L))
 
-#plt.plot(L, gaussian(L, coef[0], coef[1], coef[2]))
+fig = plt.figure(1)
+plt.plot(L, T_a, 'x', color="red", label="Experimental")
+plt.plot(xint1, spl1(xint1), color="purple", label=r"Splines 1er máximo $\lambda$ = %i nm"%la1)
+plt.plot(wint1, spl2(wint1), color="deeppink", label= r"Splines 2do máximo  $\lambda$ =%i nm"%la2)
 plt.xlim(380,710)
 plt.xlabel(r"$ \lambda  (nm)$")
 plt.ylabel(r"Absorbancia")
 plt.title(r"Espectro de Absorción para la $\alpha$ - clorofila")
-plt.show()
+plt.legend()
+fig.show()
 
-plt.figure(2)
-plt.plot(L, T_b, '.', color="crimson")
+
+fig2 = plt.figure(2)
+plt.plot(L, T_b, 'x', color="crimson", label="Experimental")
+plt.plot(xint2, rpl1(xint2), color="purple", label=r"Splines 1er máximo $\lambda$ = %i nm"%lb1)
+plt.plot(wint2, rpl2(wint2), color="deeppink", label= r"Splines 2do máximo  $\lambda$ =638 nm"%lb2)
 plt.xlim(380,710)
 plt.xlabel(r"$ \lambda  (nm)$")
 plt.ylabel(r"Absorbancia")
 plt.title(r"Espectro de Absorción para la $\beta$ - clorofila")
+plt.legend()
+fig2.show()
+
 plt.show()
