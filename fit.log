@@ -1,0 +1,196 @@
+
+
+*******************************************************************************
+Tue Apr 26 12:48:38 2016
+
+
+FIT:    data read from "para_grafica.dat"
+        format = z
+        #datapoints = 807
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.23671e+08       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+S               = 1
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Tue Apr 26 12:48:46 2016
+
+
+FIT:    data read from "para_grafica.dat"
+        format = z
+        #datapoints = 807
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 4.23671e+08       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0
+
+initial set of free parameter values
+
+S               = 0.1
+BREAK:          Singular matrix in Givens()
+
+
+
+*******************************************************************************
+Tue Apr 26 12:49:46 2016
+
+
+FIT:    data read from "para_grafica.dat"
+        format = z
+        #datapoints = 807
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.35891e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+A               = 1
+B               = 1
+
+After 2 iterations the fit converged.
+final sum of squares of residuals : 7.16287e+06
+rel. change during last iteration : -1.04931e-08
+
+degrees of freedom    (FIT_NDF)                        : 805
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 94.3291
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8897.98
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Tue Apr 26 12:54:39 2016
+
+
+FIT:    data read from "para_grafica.dat"
+        format = z
+        #datapoints = 807
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.38487e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+A               = 1e-30
+B               = 1.001
+
+After 2 iterations the fit converged.
+final sum of squares of residuals : 7.16287e+06
+rel. change during last iteration : -1.18828e-08
+
+degrees of freedom    (FIT_NDF)                        : 805
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 94.3291
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8897.98
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Tue Apr 26 12:55:03 2016
+
+
+FIT:    data read from "para_grafica.dat"
+        format = z
+        #datapoints = 807
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.16287e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+A               = 16.5859
+B               = 2
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.16287e+06
+rel. change during last iteration : -5.33085e-15
+
+degrees of freedom    (FIT_NDF)                        : 805
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 94.3291
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8897.98
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Tue Apr 26 12:58:22 2016
+
+
+FIT:    data read from "para_grafica.dat"
+        format = z
+        #datapoints = 807
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(t)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 7.16287e+06       delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.707107
+
+initial set of free parameter values
+
+A               = 16.5859
+B               = 2.002
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 7.16287e+06
+rel. change during last iteration : -2.60042e-16
+
+degrees of freedom    (FIT_NDF)                        : 805
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 94.3291
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8897.98
+
+BREAK:          Singular matrix in Invert_RtR
+

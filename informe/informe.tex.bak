@@ -1,0 +1,27 @@
+\documentclass[letter,11pt]{article}
+
+\usepackage[utf8]{inputenx}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{abstract}
+\usepackage[top=2.0cm, bottom=2.0cm, left=2.0cm, right=2.0cm]{geometry}
+
+\renewcommand*\rmdefault{cmdh}
+\usepackage[T1]{fontenc}
+%\renewcommand*\oldstylenums[1]{{\AlegreyaOsF #1}}
+
+\author{ María Fernanda Pérez Ramírez \\ {\small Laboratorio de Física Contemporánea II } \\ Facultad de Ciencias}
+\title{ \bf Caracterización de un Sistema de Vacío \\ y \\ Evaporación de una muestra de Al}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+En el siguiente trabajo se describe el funcionamiento de un sistema de alto vacío, compuesto por dos etapas de bombeo: una mecánica (especificaciones de la mecanica) y una difusora (especificaciones). Se completaron dos procedimientos, con sus respectivos intervalos de enfriamiento para obtener gráficos de la Presión vs. Tiempo, con los datos proporcionados por un medidor de presión digital localizado en la salida de la cámara. A la serie de datos obtenidos se ajustó una función $P(t) = e^{-\frac{S_e}{V}t}$, donde $S_e$ es la \emph{velocidad efectiva de bombeo} y caracteriza el sistema. El 
+\end{abstract}
+
+
+
+\end{document}
+
