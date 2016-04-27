@@ -1,0 +1,162 @@
+\documentclass[letter, 10.5pt, twocolumn]{article}
+
+\usepackage[utf8]{inputenx}
+\usepackage[spanish]{babel}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{abstract}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+\title{Espectro de Abosorción de la Clorofila}
+\author{María Fernanda Pérez Ramírez}
+\date{\today}
+\setlength{\columnsep}{0.7cm}
+
+\newcommand{\imagen}[3]{
+\begin{figure}[H]
+\centering
+\includegraphics[width = \columnwidth]{#1}
+\caption{#2}
+\label{#3}
+\end{figure}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Durante la práctica que aquí se informa, se obtuvieron dos pigmentos de clorofila, $\alpha$ y $\beta$, a partir de hojas de espinaca. Como ninguno de los dos pigmentos es soluble en agua, las espinacas tuvieron que disolverse en \textbf{éter de petróleo} (colorifa $\alpha$) y \textbf{éter etílico} (clorofila $\beta$). Se analizaron en un espectofotómetro \emph{Spectronic 21D UV/VIS} entre longitudes de onda correspondientes al visible (380nm y 710nm), con intervalos de 10 nm. Primero se caracterizó uno de los solventes, el \textbf{éter de petróleo} y se obtuvieron valores de la \textbf{trasmitancia relativa} para cada longitud de onda. Procedimos igual con las muestras de clorofila. Se utilizó la fórmula $\mathbf{A = 2 - log_{10}(T_{rel} )}$ para obtener gráficos del espectro de absorción. Para determinar los máximos, se utilizó un alogoritmo computacional de interpolación y se asignó como incertidumbre el error relativo al documentado, obteniendo: $ 413 ~\pm 7 \%  nm $ y $ 663 ~\pm 3 \%  nm $, para la alfa; para la beta, $ 434 ~\pm 6 \%  nm $  y $ 638 ~\pm 5 \%  nm$. 
+
+\end{abstract}
+
+\section{Introducción}
+\subsection{Antecedentes}
+
+Los pigmentos son compuestos químicos que poseen propiedades \emph{fluorescentes} \cite{ref1}, esto significa que absorben fotones en el espectro de luz visible, y los reemiten con una longitud de onda diferente.  \\
+
+La naturaleza ofrece una gran cantidad de ejemplos de pigmentos. Uno de los más últiles es la \textbf{clorofila}, presente en las hojas y (en menor cantidad) tallos de las plantas,  responsable del proceso de \textbf{fotosíntesis}.
+
+\subsection{La importancia de la clorofila en la fotosíntesis}
+La fotosíntesis es el proceso por el cual las plantas obtienen sus nutrientes. Se lleva a cabo en células muy específicas llamadas \textbf{cloroplastos} , cuya función es utilizar la energía de la luz solar para separar moléculas de agua, reduciendo así el dióxido de carbono, conservando el carbono para la síntesis de carbohidratos y liberando el oxígeno de nuevo a la atmósfera\cite{ref2} . \\ 
+
+Todos los pigmentos, naturales o sintéticos, poseen electrones móviles que no están asociados a ningún átomo en particular. Estos se denominan \textbf{electrones} $\pi$ \cite{ref3} y se requiere una cantidad relativamente baja de energía para excitarlos a un nivel superior. Cuando se desexcitan, los electrones $\pi$ vuelven al nivel base, liberando un fotón de menor energía, es decir, de una longitud de onda mayor, provocando el comportamiento fluorescente del pigmento. Así, la clorofila, absorbe fotones en el espectro de la luz visible y los emite de tal forma que suministra la energía suficiente para que las compuestos orgánicos interactúen y se produzca la fotosíntesis, sin disiparla en calor. Esta propiedad  permite clasificar a la fotosíntesis como \emph{altamente eficiente} \cite{ref3} .   \\
+
+
+\subsection{Composición y Clasificación de la clorofila}
+
+La composición de la clorofila se ha establecido estudiando los productos de su degradación. Cuando se calcina, el único remanente es óxido de potasio, y sabemos que todas las clorofilas son compuestos con contenido de magnesio. Además, un tercio de la molécula de clorofila lo constituye el \textbf{fitol}, un alcohol primario que es responsable de su gran capacidad \emph{reductora} (para ceder electrones). \\
+
+Hay varias formas de clorofila. La estructura entre ellas es la misma, excepto por la presencia de un radical. La clorofila \textbf{tipo $\alpha$} es azul verdosa y se haya presente en todos los organismos fotosintéticos. La \textbf{tipo} $\beta$ se encuentra en los vegetales superiores y las algas verdes, y es de un color verde casi puro. La única diferencia entre una y otra es que allí donde la $\alpha$ tiene un radical $CH_3$, la $\beta$ tiene un $HCO$. \\
+
+Ninguna de las dos es soluble en agua, pero sí en otros solventes orgánicos, como el éter etílico o el éter de petróleo, aunque la $\beta$ en menor proporción. \\
+
+El espectro de absorción de las clorofilas  y $\beta$ ha sido estudiado con anterioridad, exhibiendo máximos en los intervalos $[400nm ,~ 420nm]$ y $[640nm ,~ 660 nm]$, para la $\alpha$; y para la $\beta$, en los $[420nm ,~ 440nm]$ y $[610nm ,~ 630 nm]$ \cite{ref2}.
+
+\section{Descripción Experimental}
+\subsection{Preparación de las muestras de Clorofila}
+Para obtener el espectro de absorción de las clorofilas $\alpha$ y $\beta$, antes hay que obtener los pigmentos. Para este propósito utilizamos 2.5 gramos de hojas de espinaca fresca, que lavamos, desvenamos y maceramos en un mortero. \\
+
+ Como ninguno de los pigmentos es soluble en agua, pero ambos pueden disolverse en acetona, preparamos una solución de 50 ml de acetona al 80$\%$ y sumergimos en ella las espinacas con el tratamiento previo, en un vaso de precipitados. \\
+ 
+ Una vez que la solución adquirió un color verde intenso, la colocamos en un embudo de separación. Hasta este momento, ambas clorofilas, junto con otros pigmentos orgánicos, coexisten juntas y es necesario diferenciarlas. Para esto agregamos con cuidado, dejando resbalar por los bordes del embudo, 50 ml de \textbf{éter de petróleo} y removimos rotando con suavidad. \\
+ 
+ Lavamos la solución añadiendo 70 ml de agua destilada, dejandola resbalar por las paredes del embudo y volvimos a rotar con suavidad. Esperamos a que dos fases se separaran, la superior de color verde intenso. Drenamos la inferior, compuesta de agua y acetona. \\
+
+ 
+ Una vez que en el embudo estaba sólo la solución de éter de petróleo, lavamos con 50 ml de agua destilada \textbf{dos veces más}, y añadimos una preparación de 46 ml de alcohol metílico con 4 ml de agua destilada. \\
+ 
+ Continuamos mezclando por rotación y dejando reposar el embudo, en espera de que las fases se separaran. Hecho esto, colocamos cada una en un vaso de precipitados distinto. La solución superior, de \emph{éter de petróleo} contiene la clorofila $\alpha$ y xantofila; la inferior, de alcohol metílico, la $\beta$ y los carotenos. Tanto la xantofila como los carotenos son pigmentos orgánicos que no juegan un papel tan importante en la fotosíntesis como la clorofila, pero que son los responsables de la coloración amarillo-rojiza de los árboles, durante el otoño. \\
+ 
+ Habiendo separado ambas soluciones, lavamos el embudo de separación y colocamos en él 50 ml de la solución de alcohol metílico. A ésta le agregamos 50 ml de \textbf{éter etílico} y mezclamos con suavidad, por rotación. Después lavamos la mezcla con 25 ml de agua destilada, añadiendo de 5ml en 5 ml y rotando con suavidad , cada vez. Esperamos a que las fases se separaran y desechamos la inferior, de alcohol metílico. \\
+ 
+ Pusimos 30 ml de las soluciones de \textbf{éter de petróleo} (con clorofila alfa) y de \textbf{éter etílico} (con clorofila beta) en dos tuvos en ensayo grandes. Luego disolvimos una pastilla de hidróxido de potasio en 30 ml de alcohol metílico. Lentamente, dejamos resbalar 15 ml de esta solución en cada uno de los tubos. Agitamos y añadimos 30 ml de agua destilada para luego mezclar. \\
+ 
+ \imagen{sep3}{Soluciones de éter de petróleo (izq.) y éter etílico (der.) antes de ser dispuestas en los tubos de ensayo. La de la izquierda presenta el color verde azulado documentado para la clorofila alfa, la de la derecha el verde puro de la clorofila beta.}{sep3}
+ 
+ Una vez podiendo separar las fases que se formaron, las guardamos en dos fracos identificados. \\
+ 
+ \subsection{Obtención del espectro de Transmisión}
+ 
+ Para el análisis de las muestras empleamos un espectofotómetro de la marca \emph{spectronic} modelo \emph{21D UV/Vis}, con dos lámparas integramas: una deuterio, para luz ultravioleta, y una de tungsteno para luz visible. \\
+ 
+ Como la clorofila actúa en el régimen del visible, seleccionamos la lámpara de tungsteno con el interruptor.  A continuación, configuramos el espectómetro en la modalidad de transmitancia \footnote{El aparato tiene una función interna para medir directamente absorbancia, pero fuimos prevenidos de probables problemas de saturación}. \\
+ 
+ Considerando que ambas clorofilas se hayaban disueltas, utilizamos dos procedimientos distintos para evitar incluir efectos de absorción de los solventes. \\
+ 
+ Uno de ellos, utilizado en la clorofila beta, y sugerido propiamente por el manual, consistió en introducir en el espectómetro una muestra del solvente (éter etílico) y reajustar la sensibilidad del aparato de tal forma que el la pantalla indicase una transmitancia de 100. Después introducimos la muestra de clorofila y registramos la lectura. Esto (introducir el solvente y reajustar la sensibilidad) se hizo \textbf{para cada una} de las longitudes de onda consideradas, (de los 380nm  a los 710 nm, a intervalos de 10 nm) por indicación directa del manual. Con los datos de la Transmitancia relativa proporcionados por el aparato, utilizamos la relación:
+ \begin{equation}
+ A = 2 - log_{10}T
+ \label{abs}
+ \end{equation}
+ 
+ para relacionarla con la absorbancia. \\
+ 
+ El segundo fue utilizado en la clorofila alfa. Se caracterizó primero el solvente (éter de petróleo) para el mismo conjunto de longitudes de onda, introduciéndolo y obteniendo valores de la transmitancia. Después hicimos lo mismo con la muestra de clorofila. \footnote{Antes de introducir cualquiera de los dos, la sensibilidad del aparato \emph{sin muestra} se seleccionaba de tal forma que la transmitancia fuese de 100.} Con las mediciones de la transmitancia de ambos, se obtuvieron sus absorbancias usando la relación en (\ref{abs}). Estas se sumaron, con el fin de compensar una posible pérdida en el valor de $A$ para la muestra de clorofila, debida a la absorción propia del solvente. \\
+ 
+Una vez obtenido el arreglo de puntos para $A$ vs. $\lambda$ se utilizó un método numérico de interpolación (splines cúbicos) para suavizar los picos de las gráficas y obtener un valor más fiel del máximo. El valor impreso en las figuras obtenidas corresponde al proporciodo directamente por el cálculo. El programa utilizado está escrito en python y puede consultarse como en el siguiente repositorio de github, con el nombre \emph{analisis.py}: \url{https://github.com/FernandaPerez/LaboratorioContemporanea}. \\
+
+\section{Presentación de Resultados}
+ 
+ A continuación, en las figuras \ref{alfa} y \ref{beta}, se presentan los gráficos obtenidos tras el análisis.
+ 
+ \begin{figure}[H]
+ \centering
+ \begin{subfigure}[b]{\columnwidth}
+ \includegraphics[width=\hsize]{figure_1}
+ \end{subfigure}
+  \begin{subfigure}[b]{\columnwidth}
+ \includegraphics[width=\hsize]{figure_2}
+ \end{subfigure}
+ \caption{Graficos obtenidos para los espectos de la clorofila alfa y beta. Más adelante se ofrece una ampliación.}
+ \end{figure}
+
+
+
+\section{Conclusiones y trabajo futuro}
+
+Resumimos los resultados obtenidos en la siguiente tabla:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|ccc|}
+\hline
+\textbf{Clorofila} 		&	1era $\lambda_{max}$	& 2da $\lambda_{max}$ \\
+\hline
+$\alpha$ &$ 413 ~\pm 7 \%  nm $ &$ 663 ~\pm 3 \%  nm $  \\
+$\beta$ & $ 434 ~\pm 6 \%  nm $  & $ 638 ~\pm 5 \%  nm $     \\
+\hline
+
+\end{tabular}
+\end{table} 
+
+En donde la incertidumbre relativa se asoció considerando la distancia promedio del valor obtenido, con los extremos de los valores esperados documentados en \cite{ref2}. \\
+
+La dos métodos distintos utilizados al momento de excluir los efectos de absorción del solvente no produjeron un cambio significativo en la proximidad del resultado obtenido al documental. Como trabajo futuro podríamos repetir el experimento, utilizando ambos métodos en las dos muestras con el fin de comprobar si hay una \emph{ganancia relativa} en la amplitud de los máximos. \\ 
+
+Observando la escala de la gráfica del espectro de la clorofila beta observamos que su amplitud es menor con respecto de la de la clorofila alfa. La bibliografía menciona \cite{ref2} que la clorofila beta es menos soluble en solventes orgánicos que la alfa, lo cual podría explicar esta pérdida de amplitud relativa. \\
+
+Por las longitudes de onda de los máximos obtenidos, podemos decir que ambas clorofilas absorben más luz en la región de los violetas y de los rojos.  \\
+\bibliography{referencias} 
+\bibliographystyle{siam}
+
+\begin{figure*}
+\centering
+\includegraphics[width = 0.8\textwidth]{figure_1}
+\caption{Espectro de absorción de la clorofila $\alpha$.}
+\label{alfa}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width = 0.8\textwidth]{figure_2}
+\caption{Espectro de absorción de la clorofila $\beta$.}
+\label{beta}
+\end{figure*}
+
+
+
+
+
+\end{document}
